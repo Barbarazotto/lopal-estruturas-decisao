@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o Número</title>
+</head>
+<body>
+    <script>
+      // Gerar um número aleatório entre 0 e 100
+         let numeroAleatorio = Math.random()*100;
+        let numeroAleatorioInteiro = Math.round(numeroAleatorio);
+        
+
+        //perguntar ao jogador que número é esse
+        let Adivinhe = prompt("Eu estou pensando em um número de 0 a 100, que número é esse?")
+    
+            //// Verifica se o palpite está correto
+        if(Adivinhe == numeroAleatorioInteiro){
+            document.write("Esse era o número que eu estava pensando! Parabéns!");
+        }else{
+        document.write("Que pena, esse não era o número que eu estava pensando. O número que eu etava pensando era " + numeroAleatorioInteiro + ". Tente novamente!")
+        }
+
+    </script>
+</body>
+</html>
