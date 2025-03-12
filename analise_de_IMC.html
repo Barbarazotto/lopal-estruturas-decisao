@@ -14,16 +14,17 @@
         //Se estiver abaixo de 18.5 exibir "Seu IMC indica que você está abaixo do peso!"
         //Seestiver acima de 35 exibir "Seu IMC indica que você está acima do peso!"
         // Depois de ter escrito o program, atualize o repositório remoto e envie o link pela tarefa.
-
-     
+        
         function calcularIMC() {
     let altura = prompt("Digite sua altura (em metros)");
     let peso = prompt("Digite seu peso (em kg)");
     
     let imc = peso / (altura * altura);
 
+    imc = Math.round(imc);
+
     if (imc >= 18.5 && imc <= 35) {
-        document.write("Seu IMC é: " + imc.toFixed(2) + ". Parabéns, você está dentro do intervalo saudável!");
+        document.write("Seu IMC é: " + imc + ". Parabéns, você está dentro do intervalo saudável!");
     } else if (imc < 18.5){
         document.write("Seu IMC indica que você está abaixo do peso!");
     } else{
@@ -32,6 +33,9 @@
 }
 
 calcularIMC();
+
+     
+        
 
 
 
