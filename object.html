@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    ><script>
+        // Problema
+        // Armazenar diversos tipos de informação de cada aluno
+
+        // Usando um objeto para um aluno
+        let aluno ={
+            nome: 'Aline',
+            idade: '15',
+            sesi: 'Ipiranga',
+            temPet: true
+        }
+        // document.write(aluno);
+        console.log(aluno)
+
+        document.write('Nome: ' + aluno.nome + '<br>');
+        document.write('Idade: ' + aluno.idade + '<br>');
+        document.write('SESI: ' + aluno.sesi + '<br>');
+        document.write('Tem Pet?: ' + aluno.temPet + '<br>');
+
+        // Criando um array de objetos
+
+        let alunos = [
+            {nome: 'Aline', idade: 15, sesi: 'Ipiranga', temPet: true},
+            {nome: 'Bárbara', idade: 16, sesi: 'Vila Leopoldina', temPet: true}
+        ];
+
+        for(let i = 0; i < alunos.length; i++){
+            // document.write('<p>O(a) aluno(a) ' + alunos[i].nome + ' tem ' + alunos[i].idade + ' anos e é do SESI ' + alunos[i].sesi + '.</p>');
+
+              document.write(`<p>O(a) aluno(a) ${alunos[i].nome} tem ${alunos[i].idade} anos e é do SESI ${alunos[i].sesi}. ${alunos[i].temPet ? "Tem pet." : "Não tem pet."}</p>`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <button type="button" onclick="adicionarAlunos()">Adicionar Dados do(a) Aluno(a)</button>
+    <output></output>
+    <button type="button" onclick="apagarAluno()">Apagar Dados do(a) Aluno(a)</button>
+
+    <script>
+        
+        let alunos = [];
+
+        function imprimirAlunos() {
+            document.querySelector('output').innerHTML = '';
+            for (let i = 0; i < alunos.length; i++) {
+                document.querySelector("output").innerHTML += `
+                    <p>O(a) aluno(a) ${alunos[i].nome} tem ${alunos[i].idade} anos e é do SESI ${alunos[i].sesi}. 
+                    ${alunos[i].temPet ? "Tem pet." : "Não tem pet."}</p>`;
+            }
+        }
+
+        function adicionarAlunos() {
+            let nome = prompt('Digite o nome do(a) aluno(a):');
+            let idade = prompt('Digite a idade do(a) aluno(a):');
+            let sesi = prompt('Digite qual SESI esse aluno(a) pertence:');
+            let temPet = prompt('Digite se o aluno(a) tem pet (sim/não):');
+
+            temPet = temPet === 'sim';
+
+            alunos.push({
+                nome: nome,
+                idade: idade,
+                sesi: sesi,
+                temPet: temPet
+            });
+
+            
+            let opcaoUsuario = confirm('Deseja adicionar mais um aluno?');
+            if (opcaoUsuario) {
+                adicionarAlunos(); 
+            }
+
+            imprimirAlunos();  
+        }
+
+        function apagarAluno() {
+            if (alunos.length > 0) {
+                alunos.pop();  
+                alert('Último aluno removido!');
+            } else {
+                alert('Não há alunos na lista para remover!');
+            }
+
+            imprimirAlunos();  
+        }
+
+        imprimirAlunos();      
+    </script>
+</body>
+</html>
+        

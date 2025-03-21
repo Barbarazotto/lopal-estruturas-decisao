@@ -8,19 +8,31 @@
 <body>
     <script>
       // Gerar um número aleatório entre 0 e 100
-         let numeroAleatorio = Math.random()*100;
-        let numeroAleatorioInteiro = Math.round(numeroAleatorio);
+         //let numeroAleatorio = Math.random()*100;
+        //let numeroAleatorioInteiro = Math.round(numeroAleatorio);
         
 
         //perguntar ao jogador que número é esse
-        let Adivinhe = prompt("Eu estou pensando em um número de 0 a 100, que número é esse?")
+       // let Adivinhe = prompt("Eu estou pensando em um número de 0 a 100, que número é esse?");
     
-            //// Verifica se o palpite está correto
-        if(Adivinhe == numeroAleatorioInteiro){
-            document.write("Esse era o número que eu estava pensando! Parabéns!");
-        }else{
-        document.write("Que pena, esse não era o número que eu estava pensando. O número que eu etava pensando era " + numeroAleatorioInteiro + ". Tente novamente!")
-        }
+            // Verifica se o palpite está correto
+        //if(Adivinhe == numeroAleatorioInteiro){
+         //   document.write("Esse era o número que eu estava pensando! Parabéns!");
+      //  }else{
+      //  document.write("Que pena, esse não era o número que eu estava pensando. O número que eu etava pensando era " + numeroAleatorioInteiro + ". Tente novamente!");
+        let numeroAleatorio = Math.random()*10 + 1;
+        let numeroAleatorioInteiro = Math.floor(numeroAleatorio)
+        //document.write(numeroAleatorioInteiro)
+
+        let resposta = prompt ("Digite um número de 1 a 10: ");
+
+        let resultado = (resposta >=1 && resposta <=10) ?
+                            (resposta == numeroAleatorioInteiro) ?
+                                "Parabéns! Você adivinhou!":
+                                "Você errou! O número que eu pensei era" +
+                                    numeroAleatorioInteiro + "!" : 
+                                "Número inválido."
+    
 
     </script>
 </body>
